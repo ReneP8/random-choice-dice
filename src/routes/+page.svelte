@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { scale } from 'svelte/transition';
 	let choices: string[] = ['', ''];
 	let result: string;
 
@@ -21,7 +22,9 @@
 	<div class="flex flex-col items-center gap-20 mt-5 h-full">
 		<div class="flex flex-col items-center w-[60%] gap-10 mt-10">
 			{#if result}
-				<h1>{result}</h1>
+				{#key result}
+					<h1 in:scale>{result}</h1>
+				{/key}
 			{:else}
 				<h1>No Result</h1>
 			{/if}
@@ -39,7 +42,7 @@
 				><span>Add More</span></button
 			>
 			{#each choices as choice, i}
-				<div class="input-group input-group-divider grid-cols-[1fr_auto]">
+				<div transition:scale class="input-group input-group-divider grid-cols-[1fr_auto]">
 					<input class="input p-2" bind:value={choice} placeholder="Choice {i + 1}" />
 					<button class="variant-filled-error" on:click={() => deleteChoice(i)}>Delete</button>
 				</div>
