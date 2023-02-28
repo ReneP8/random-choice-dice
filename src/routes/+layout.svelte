@@ -14,7 +14,7 @@
 <AppShell>
 	<svelte:fragment slot="header">
 		<AppBar>
-			<svelte:fragment slot="lead"><h4>Random Choice Dice</h4></svelte:fragment>
+			<svelte:fragment slot="lead"><p>Random Choice Dice</p></svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
 	<!-- Router Slot -->
