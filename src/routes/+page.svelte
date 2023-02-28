@@ -31,9 +31,12 @@
 		</div>
 
 		<div class="flex flex-col items-center w-[60%] gap-5 mb-5">
-			<p>Enter all your choices and click on Generate to get random a choice.</p>
+			<p>
+				Enter all your choices and then click on <span class="text-secondary-400">Roll</span> to get
+				random a choice.
+			</p>
 			<button class="btn bg-primary-500 p-2 w-full" on:click|preventDefault={addChoice}
-				><span>Add Choice</span></button
+				><span>Add More</span></button
 			>
 			{#each choices as choice, i}
 				<div class="input-group input-group-divider grid-cols-[1fr_auto]">
