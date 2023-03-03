@@ -1,19 +1,19 @@
 <script lang="ts">
 	import { scale } from 'svelte/transition';
-	let choices: string[] = ['', ''];
+	import { content } from '../stores/choices';
 	let result: string;
 
 	function addChoice() {
-		choices = [...choices, ''];
+		$content = [...$content, ''];
 	}
 
 	function deleteChoice(index: number) {
-		choices.splice(index, 1);
-		choices = choices;
+		$content.splice(index, 1);
+		$content = $content;
 	}
 
 	function getRandomChoice() {
-		let valid = choices.filter((element) => element);
+		let valid = $content.filter((element) => element);
 		result = valid[Math.floor(Math.random() * valid.length)];
 	}
 </script>
@@ -41,7 +41,7 @@
 			<button class="btn bg-primary-500 p-3 w-full" on:click|preventDefault={addChoice}
 				><span class="font-bold">Add More</span></button
 			>
-			{#each choices as choice, i}
+			{#each $content as choice, i}
 				<div transition:scale class="input-group input-group-divider grid-cols-[1fr_auto]">
 					<input class="input p-3" bind:value={choice} placeholder="Choice {i + 1}" />
 					<button class="variant-filled-error" on:click={() => deleteChoice(i)}>Delete</button>
