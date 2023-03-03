@@ -28,8 +28,8 @@
 			{:else}
 				<h1>No Result</h1>
 			{/if}
-			<button class="btn bg-secondary-500 w-full" on:click|preventDefault={getRandomChoice}
-				><span>Roll</span></button
+			<button class="btn bg-secondary-500 p-3 w-full" on:click|preventDefault={getRandomChoice}
+				><span class="font-bold">Roll</span></button
 			>
 		</div>
 
@@ -38,12 +38,12 @@
 				Enter all your choices and then click on <span class="text-secondary-400">Roll</span> to get
 				random a choice.
 			</p>
-			<button class="btn bg-primary-500 p-2 w-full" on:click|preventDefault={addChoice}
-				><span>Add More</span></button
+			<button class="btn bg-primary-500 p-3 w-full" on:click|preventDefault={addChoice}
+				><span class="font-bold">Add More</span></button
 			>
 			{#each choices as choice, i}
 				<div transition:scale class="input-group input-group-divider grid-cols-[1fr_auto]">
-					<input class="input p-2" bind:value={choice} placeholder="Choice {i + 1}" />
+					<input class="input p-3" bind:value={choice} placeholder="Choice {i + 1}" />
 					<button class="variant-filled-error" on:click={() => deleteChoice(i)}>Delete</button>
 				</div>
 			{/each}
