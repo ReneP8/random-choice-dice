@@ -21,9 +21,13 @@
 		return result;
 	}
 
+	function isContentValid() {
+		return $content.length > 1 && !$content.includes('');
+	}
+
 	function simulateChoices() {
 		results = [];
-		if (times > 1) {
+		if (times > 1 && isContentValid()) {
 			loading = true;
 			let runs = 0;
 			$content.forEach((element) => results.push({ name: element, value: 0 }));
