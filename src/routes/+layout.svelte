@@ -13,8 +13,12 @@
 
 <AppShell>
 	<svelte:fragment slot="header">
+		<title>Random Choice Dice</title>
 		<AppBar>
-			<svelte:fragment slot="lead"><p>Random Choice Dice</p></svelte:fragment>
+			<svelte:fragment slot="lead"
+				><img class="logo" src="dice.webp" alt="Logo" />
+				<p>Random Choice Dice</p></svelte:fragment
+			>
 		</AppBar>
 	</svelte:fragment>
 	<!-- Router Slot -->

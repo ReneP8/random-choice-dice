@@ -9,7 +9,9 @@ Following features are contained:
 - Roll the dice to choose an option
 - Saving last choices into browser storage
 
+Credits
 
+- Icon: https://www.vecteezy.com/png/10898627-white-realistic-dice
 
 # create-svelte
 
